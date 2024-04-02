@@ -6,10 +6,12 @@ if not os.path.exists(DB_FOLDER):
 db_path = os.path.join(DB_FOLDER, 'site.db')
 
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
 
 USERNAME = None
 
 def set_username_in_config(username):
     global USERNAME
-    USERNAME=username
+    USERNAME = username
     return USERNAME
